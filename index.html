@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Zapatas de Concreto Armado: Diseño y Construcción Paso a Paso</title>
+  <meta name="description" content="Ebook práctico para aprender a diseñar y construir zapatas de concreto armado paso a paso. Incluye checklists, casos reales y bonos extra. Oferta de lanzamiento limitada.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root{
+      --bg-main:#0f172a;
+      --bg-dark:#020617;
+      --bg-card:#111827;
+      --bg-card-alt:#1f2937;
+      --text-main:#e5e7eb;
+      --text-muted:#9ca3af;
+      --accent:#f59e0b;
+      --accent-dark:#d97706;
+      --danger:#f97316;
+      --border-subtle:#1f2937;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#1f2937 0,#020617 55%);
+      color:var(--text-main);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit;}
+
+    /* Top urgency bar */
+    .top-bar{
+      width:100%;
+      background:linear-gradient(90deg,#f97316,#facc15);
+      color:#111827;
+      font-size:.85rem;
+      padding:.55rem 1rem;
+      text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:.55rem;
+    }
+    .top-bar strong{font-weight:700;}
+    .top-bar span{font-weight:500;}
+
+    .wrapper{max-width:var(--max-width);margin:0 auto;padding:0 1.5rem 4rem;}
+    header{padding:1.1rem 1.5rem 0;max-width:var(--max-width);margin:0 auto;}
+    .logo{
+      font-weight:700;
+      letter-spacing:.08em;
+      font-size:.9rem;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      display:flex;
+      align-items:center;
+      gap:.5rem;
+    }
+    .logo-mark{
+      width:22px;height:22px;
+      border-radius:5px;
+      border:2px solid var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:.7rem;
+      color:var(--accent);
+    }
+
+    /* Hero */
+    .hero{
+      min-height:80vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2.3rem 0 3rem;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+      gap:2.5rem;
+      align-items:center;
+    }
+    .hero-kicker{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--text-muted);
+      margin-bottom:.5rem;
+    }
+    h1{
+      font-size:2.4rem;
+      line-height:1.15;
+      margin-bottom:.75rem;
+    }
+    .hero-sub{
+      font-size:1.02rem;
+      color:var(--text-muted);
+      margin-bottom:1.25rem;
+    }
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-bottom:1.5rem;
+    }
+    .badge{
+      font-size:.8rem;
+      padding:.25rem .7rem;
+      border-radius:999px;
+      border:1px solid var(--border-subtle);
+      color:var(--text-muted);
+    }
+    .hero-cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+    }
+    .btn-primary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:.9rem 1.7rem;
+      border-radius:999px;
+      background:var(--accent);
+      color:#111827;
+      font-weight:700;
+      font-size:.95rem;
+      border:none;
+      cursor:pointer;
+      transition:background .18s, transform .18s, box-shadow .18s;
+      box-shadow:0 14px 40px rgba(0,0,0,.5);
+      text-align:center;
+    }
+    .btn-primary:hover{
+      background:var(--accent-dark);
+      transform:translateY(-1px);
+      box-shadow:0 20px 45px rgba(0,0,0,.65);
+    }
+    .btn-ghost{
+      padding:.8rem 1.3rem;
+      border-radius:999px;
+      border:1px solid var(--border-subtle);
+      color:var(--text-muted);
+      font-size:.9rem;
+      text-align:center;
+    }
+    .badge-price{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-left:.5rem;
+      padding:.25rem .65rem;
+      border-radius:999px;
+      background:rgba(249,115,22,.08);
+      border:1px solid rgba(249,115,22,.6);
+      font-size:.78rem;
+      color:#fed7aa;
+      white-space:nowrap;
+    }
+    .hero-note{
+      font-size:.8rem;
+      color:var(--text-muted);
+      margin-top:.45rem;
+    }
+    .hero-cover{
+      background:linear-gradient(145deg,#0b1120,#020617);
+      border-radius:1.25rem;
+      padding:1.6rem 1.8rem;
+      border:1px solid rgba(148,163,184,.25);
+      box-shadow:0 30px 80px rgba(0,0,0,.75);
+      position:relative;
+      overflow:hidden;
+    }
+    .cover-tag{
+      font-size:.7rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      color:var(--text-muted);
+      margin-bottom:.35rem;
+    }
+    .cover-title{
+      font-size:1.15rem;
+      font-weight:700;
+      margin-bottom:.7rem;
+    }
+    .cover-illus{
+      border-radius:.9rem;
+      border:1px solid rgba(148,163,184,.3);
+      padding:1rem;
+      margin-bottom:1rem;
+      position:relative;
+      background:radial-gradient(circle at top,#1f2937 0,#020617 60%);
+    }
+    .grid-overlay{
+      position:absolute;
+      inset:0;
+      background-image:linear-gradient(transparent 95%,rgba(148,163,184,.2) 95%),linear-gradient(90deg,transparent 95%,rgba(148,163,184,.2) 95%);
+      background-size:18px 18px;
+      opacity:.3;
+      pointer-events:none;
+    }
+    .footing{
+      position:relative;
+      z-index:1;
+      margin-top:1rem;
+    }
+    .footing-base{
+      width:80%;
+      margin:0 auto;
+      height:80px;
+      border-radius:10px;
+      border:2px solid #e5e7eb;
+      transform:skewX(-18deg);
+      position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,.9);
+    }
+    .footing-base::before{
+      content:'';
+      position:absolute;
+      inset:14px 16px 14px 12px;
+      border-radius:7px;
+      border:2px solid #e5e7eb;
+    }
+    .footing-steel{
+      position:absolute;
+      left:50%;
+      top:-80px;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+    }
+    .footing-steel span{
+      width:4px;
+      height:80px;
+      background:#e5e7eb;
+      border-radius:999px;
+      position:relative;
+    }
+    .footing-steel span::before,
+    .footing-steel span::after{
+      content:'';
+      position:absolute;
+      left:-6px;
+      right:-6px;
+      height:3px;
+      background:#e5e7eb;
+      border-radius:999px;
+    }
+    .footing-steel span::before{top:18px;}
+    .footing-steel span::after{bottom:18px;}
+    .cover-list{
+      font-size:.8rem;
+      color:var(--text-muted);
+      list-style:none;
+      padding-left:0;
+    }
+    .cover-list li{
+      margin-bottom:.25rem;
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+    }
+    .dot{
+      width:6px;height:6px;border-radius:999px;background:var(--accent);
+    }
+
+    /* Mini offer under hero */
+    .mini-offer{
+      padding:0 1.5rem 0;
+    }
+    .mini-offer-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+      margin-top:-1.4rem;
+      background:linear-gradient(90deg,rgba(15,23,42,.95),rgba(8,47,73,.96));
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.35);
+      padding:1.3rem 1.4rem;
+      display:grid;
+      grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
+      gap:1.2rem;
+      box-shadow:0 18px 60px rgba(0,0,0,.75);
+    }
+    .mini-offer-title{
+      font-size:1rem;
+      margin-bottom:.35rem;
+    }
+    .mini-offer-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.55rem;
+      margin-top:.4rem;
+      font-size:.82rem;
+      color:var(--text-muted);
+    }
+    .mini-offer-items span{
+      padding:.25rem .6rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.35);
+    }
+    .mini-offer-right{
+      text-align:right;
+    }
+    .mini-price{
+      font-size:1.8rem;
+      font-weight:700;
+    }
+    .mini-offer-note{
+      font-size:.8rem;
+      color:var(--text-muted);
+    }
+
+    /* Sections */
+    section.section{
+      padding:3.1rem 1.5rem 0;
+    }
+    .section-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+    }
+    .section-title{
+      font-size:1.5rem;
+      margin-bottom:.4rem;
+    }
+    .section-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.75rem;
+      color:var(--text-muted);
+      margin-bottom:.4rem;
+    }
+    .section-sub{
+      color:var(--text-muted);
+      max-width:640px;
+      font-size:.95rem;
+      margin-bottom:1.8rem;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+      gap:2rem;
+    }
+    .card{
+      background:var(--bg-card);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.2);
+      padding:1.5rem 1.6rem;
+      box-shadow:0 18px 50px rgba(0,0,0,.7);
+    }
+    .card-alt{
+      background:var(--bg-card-alt);
+    }
+    .card h3{
+      font-size:1.1rem;
+      margin-bottom:.4rem;
+    }
+    .muted{color:var(--text-muted);}
+    ul.bullets{
+      list-style:none;
+      padding-left:0;
+      margin-top:.5rem;
+    }
+    ul.bullets li{
+      margin-bottom:.45rem;
+      display:flex;
+      gap:.5rem;
+      font-size:.92rem;
+    }
+    ul.bullets li::before{
+      content:'▹';
+      color:var(--accent);
+      margin-top:.05rem;
+    }
+    .highlight{
+      color:var(--accent);
+      font-weight:600;
+    }
+
+    /* Mid CTA */
+    .cta-middle{
+      padding:2.6rem 1.5rem 0;
+    }
+    .cta-middle-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+      text-align:center;
+    }
+    .cta-middle-inner p{
+      color:var(--text-muted);
+      font-size:.95rem;
+      margin-bottom:1rem;
+    }
+
+    /* Preview section */
+    .preview-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(0,1.1fr);
+      gap:2rem;
+      align-items:stretch;
+    }
+    .toc-list{
+      margin-top:.6rem;
+      padding-left:1.1rem;
+      font-size:.9rem;
+      color:var(--text-muted);
+    }
+    .toc-list li{margin-bottom:.25rem;}
+    .preview-pages{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:1rem;
+    }
+    .page-preview{
+      background:radial-gradient(circle at top,#1f2937,#020617);
+      border-radius:.9rem;
+      border:1px solid rgba(148,163,184,.4);
+      padding:.8rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .page-inner{
+      border-radius:.5rem;
+      background:rgba(15,23,42,.95);
+      border:1px solid rgba(148,163,184,.35);
+      padding:.6rem .7rem;
+      filter:blur(1px);
+    }
+    .page-header{
+      width:60%;
+      height:8px;
+      border-radius:999px;
+      background:rgba(249,250,251,.85);
+      margin-bottom:.45rem;
+    }
+    .page-line{
+      height:6px;
+      border-radius:999px;
+      background:rgba(148,163,184,.85);
+      margin-bottom:.25rem;
+      width:100%;
+    }
+    .page-line.short{width:70%;}
+    .page-footer{
+      margin-top:.4rem;
+      height:6px;
+      width:40%;
+      border-radius:999px;
+      background:rgba(248,250,252,.8);
+    }
+    .page-label{
+      position:absolute;
+      bottom:.55rem;
+      right:.7rem;
+      font-size:.75rem;
+      color:var(--text-muted);
+      background:rgba(15,23,42,.9);
+      padding:.18rem .5rem;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.5);
+    }
+
+    /* Benefits grid */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1.5rem;
+    }
+
+    /* Audience section */
+    .audience-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1.5rem;
+    }
+    .audience-card{
+      background:var(--bg-card);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.25);
+      padding:1.3rem 1.4rem;
+      font-size:.92rem;
+    }
+    .audience-card ul{
+      list-style:none;
+      padding-left:0;
+      margin-top:.3rem;
+    }
+    .audience-card li{
+      margin-bottom:.4rem;
+      display:flex;
+      gap:.4rem;
+    }
+    .audience-card li::before{
+      content:'✔';
+      color:var(--accent);
+      margin-top:0;
+    }
+
+    /* Why so cheap */
+    .cheap-card{
+      background:var(--bg-card-alt);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.3);
+      padding:1.6rem;
+      font-size:.93rem;
+      box-shadow:0 18px 50px rgba(0,0,0,.7);
+    }
+
+    /* Testimonials */
+    .testimonial{
+      background:var(--bg-card);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.25);
+      padding:1.3rem 1.4rem 1.4rem;
+      font-size:.9rem;
+      position:relative;
+    }
+    .testimonial::before{
+      content:'“';
+      position:absolute;
+      top:.4rem;
+      left:.9rem;
+      font-size:2.5rem;
+      color:rgba(148,163,184,.2);
+    }
+    .testimonial-header{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      margin-bottom:.5rem;
+    }
+    .avatar{
+      width:30px;
+      height:30px;
+      border-radius:999px;
+      background:radial-gradient(circle at 30% 20%,#facc15,#f97316);
+      flex-shrink:0;
+    }
+    .testimonial-name{
+      font-weight:600;
+      color:var(--text-main);
+    }
+    .muted-small{
+      font-size:.78rem;
+      color:var(--text-muted);
+    }
+
+    /* Pricing & CTA final */
+    .pricing{
+      text-align:center;
+      max-width:640px;
+      margin:0 auto;
+    }
+    .pricing-tag{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--text-muted);
+      margin-bottom:.35rem;
+    }
+    .pricing-main{
+      font-size:1.3rem;
+      margin-bottom:.7rem;
+    }
+    .price-number{
+      font-size:2.1rem;
+      font-weight:700;
+      display:block;
+      margin-top:.3rem;
+    }
+    .secure-badges{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:.6rem;
+      margin-top:1.1rem;
+      font-size:.8rem;
+      color:var(--text-muted);
+    }
+    .secure-badges span{
+      padding:.35rem .7rem;
+      border-radius:999px;
+      border:1px solid var(--border-subtle);
+    }
+    .guarantee{
+      margin-top:1rem;
+      font-size:.85rem;
+      color:var(--text-muted);
+    }
+    .urgency{
+      margin-top:1.6rem;
+      font-size:.9rem;
+      color:var(--danger);
+      font-weight:500;
+    }
+
+    /* FAQ */
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1.4rem;
+    }
+    .faq-item{
+      background:var(--bg-card);
+      border-radius:1rem;
+      border:1px solid rgba(148,163,184,.2);
+      padding:1.2rem 1.3rem;
+      font-size:.9rem;
+    }
+    .faq-q{
+      font-weight:600;
+      margin-bottom:.3rem;
+    }
+    .faq-a{
+      color:var(--text-muted);
+      font-size:.88rem;
+    }
+
+    footer{
+      padding:2.5rem 1.5rem 0;
+      font-size:.8rem;
+      color:var(--text-muted);
+      max-width:var(--max-width);
+      margin:0 auto 3rem;
+      text-align:center;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr;}
+      .hero{padding-top:1.4rem;}
+      h1{font-size:2rem;}
+      .hero-cover{order:-1;}
+      .two-col{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr;}
+      .preview-grid{grid-template-columns:1fr;}
+      .audience-grid{grid-template-columns:1fr;}
+      .faq-grid{grid-template-columns:1fr;}
+      .mini-offer-inner{
+        grid-template-columns:1fr;
+        text-align:left;
+      }
+      .mini-offer-right{text-align:left;}
+      .btn-primary,
+      .btn-ghost{
+        width:100%;
+        justify-content:center;
+      }
+      .top-bar{font-size:.78rem;padding:.55rem .6rem;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <strong>🔥 Oferta de lanzamiento:</strong>
+  <span>US$ 19.90 por tiempo limitado. Luego el precio subirá.</span>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">ZA</div>
+    Zapatas de Concreto Armado
+  </div>
+</header>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">ebook práctico para ingenieros civiles</div>
+        <h1>Diseña zapatas de concreto armado con un método claro, seguro y aplicable en obra.</h1>
+        <p class="hero-sub">
+          Pasa del “creo que está bien” al “sé por qué esta zapata funciona”. Un proceso paso a paso
+          desde el informe de suelos hasta la supervisión en campo.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">+30 páginas de contenido práctico</span>
+          <span class="badge">Incluye checklists y casos reales</span>
+          <span class="badge">Pensado para estudiantes y juniors</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="https://pay.hotmart.com/V102947357Q" target="_blank" rel="noopener" class="btn-primary">
+            Acceder ahora por US$ 19.90
+          </a>
+          <span class="badge-price">Solo precio de lanzamiento</span>
+          <a href="#preview" class="btn-ghost">Ver cómo es por dentro</a>
+        </div>
+        <div class="hero-note">
+          Acceso inmediato en PDF. Lo lees en tu laptop, tablet o celular.
+        </div>
+      </div>
+
+      <aside class="hero-cover">
+        <div class="cover-tag">Ebook técnico aplicado</div>
+        <div class="cover-title">“Zapatas de Concreto Armado: Diseño y Construcción Paso a Paso”</div>
+        <div class="cover-illus">
+          <div class="grid-overlay"></div>
+          <div class="footing">
+            <div class="footing-base"></div>
+            <div class="footing-steel">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <ul class="cover-list">
+          <li><span class="dot"></span> Método estructurado para zapatas aisladas.</li>
+          <li><span class="dot"></span> Reglas claras para evitar fallas por suelo o mala ejecución.</li>
+          <li><span class="dot"></span> Herramientas imprimibles para diseño y supervisión.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MINI OFFER (PRICE ABOVE THE FOLD) -->
+  <section class="mini-offer">
+    <div class="mini-offer-inner">
+      <div>
+        <div class="mini-offer-title"><strong>Hoy obtienes todo esto por solo US$ 19.90:</strong></div>
+        <div class="mini-offer-items">
+          <span>📘 Ebook completo (+30 páginas)</span>
+          <span>✅ 3 checklists imprimibles</span>
+          <span>🧩 Tabla de síntomas vs causas</span>
+          <span>🔁 Actualizaciones futuras incluidas</span>
+        </div>
+      </div>
+      <div class="mini-offer-right">
+        <div class="mini-price">US$ 19.90</div>
+        <div class="mini-offer-note">Precio pensado para estudiantes, técnicos y residentes de obra.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="section" id="problema">
+    <div class="section-inner">
+      <div class="two-col">
+        <div>
+          <div class="section-kicker">el problema en obra</div>
+          <h2 class="section-title">La mayoría diseña zapatas copiando ejemplos… y cruzando los dedos.</h2>
+          <p class="section-sub">
+            La universidad te enseña teoría, pero rara vez te muestra cómo tomar decisiones cuando el suelo es dudoso,
+            el cliente tiene prisa y la obra quiere resolver “como siempre se ha hecho”.
+          </p>
+          <ul class="bullets">
+            <li>Se dimensionan zapatas solo con una fórmula, sin revisar capacidad portante ni asentamientos.</li>
+            <li>Se reaprovechan detalles de otro proyecto con suelos y cargas completamente diferentes.</li>
+            <li>En campo se modifican niveles, espesores o armados porque “ya lo hemos hecho así”.</li>
+            <li>Si luego aparecen fisuras o asentamientos, nadie tiene claro dónde estuvo el error.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card card-alt">
+            <h3>Cuando falla la cimentación, todo falla.</h3>
+            <p class="muted">
+              Puedes tener un buen análisis estructural, pero si la cimentación está mal planteada,
+              los problemas aparecen en forma de fisuras, puertas que no cierran, asentamientos y reclamos del cliente.
+            </p>
+            <p class="muted" style="margin-top:.7rem;">
+              No se trata de memorizar fórmulas, sino de seguir un <span class="highlight">proceso lógico</span> que te diga
+              qué revisar, en qué orden y qué decisiones tomar en cada paso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMACIÓN -->
+  <section class="section" id="transformacion">
+    <div class="section-inner">
+      <div class="section-kicker">lo que cambia después de leerlo</div>
+      <h2 class="section-title">De “no estoy seguro de esta zapata” a “puedo defender mis decisiones con criterio”.</h2>
+      <p class="section-sub">
+        El ebook está pensado para que puedas usarlo como guía de trabajo: antes de modelar, durante el cálculo
+        y al momento de supervisar en campo.
+      </p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Antes</h3>
+          <ul class="bullets">
+            <li>Dudas constantes: ¿esta área será suficiente?, ¿este espesor es seguro?</li>
+            <li>Dependencia total del software sin entender lo que pasa detrás.</li>
+            <li>Miedo a que el suelo no responda como se asumió en un papel.</li>
+            <li>Conversaciones tensas con obra porque “el diseño no está claro”.</li>
+          </ul>
+        </div>
+        <div class="card card-alt">
+          <h3>Después</h3>
+          <ul class="bullets">
+            <li>Sigue un <span class="highlight">proceso paso a paso</span> desde el estudio de suelos hasta la zapata terminada.</li>
+            <li>Sabes qué verificaciones son obligatorias y cómo documentarlas.</li>
+            <li>Detectas errores típicos antes de que se conviertan en fisuras o reclamos.</li>
+            <li>Te sientes seguro defendiendo tus planos y criterios ante jefes y clientes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA INTERMEDIO 1 -->
+  <section class="cta-middle">
+    <div class="cta-middle-inner">
+      <p>Si quieres dejar de diseñar “a ojo” y empezar a trabajar con un método claro, este es tu siguiente paso.</p>
+      <a href="https://pay.hotmart.com/V102947357Q" target="_blank" rel="noopener" class="btn-primary">
+        Comprar ebook ahora por US$ 19.90
+      </a>
+    </div>
+  </section>
+
+  <!-- PREVIEW + TABLE OF CONTENTS -->
+  <section class="section" id="preview">
+    <div class="section-inner">
+      <div class="section-kicker">previsualización real</div>
+      <h2 class="section-title">Así se ve el ebook por dentro.</h2>
+      <p class="section-sub">
+        No es un PDF improvisado. Es un material maquetado para consultar rápido: en el escritorio o en la obra.
+        Aquí tienes una vista borrosa de algunas páginas y la tabla completa de contenidos.
+      </p>
+
+      <div class="preview-grid">
+        <div>
+          <h3>Tabla de contenidos</h3>
+          <ol class="toc-list">
+            <li>Introducción: por qué fallan las cimentaciones.</li>
+            <li>Cap. 1 – Fundamentos de suelos y tipos de cimentación.</li>
+            <li>Cap. 2 – Checklist de información antes de diseñar.</li>
+            <li>Cap. 3 – Diseño paso a paso de una zapata aislada.</li>
+            <li>Cap. 4 – De la teoría al terreno: ejecución en obra.</li>
+            <li>Cap. 5 – Los 10 errores más caros en zapatas.</li>
+            <li>Cap. 6 – Caso práctico: vivienda de 3 pisos.</li>
+            <li>Cap. 7 – Herramientas, checklists y tabla de síntomas vs causas.</li>
+          </ol>
+        </div>
+        <div class="preview-pages">
+          <div class="page-preview">
+            <div class="page-inner">
+              <div class="page-header"></div>
+              <div class="page-line"></div>
+              <div class="page-line"></div>
+              <div class="page-line short"></div>
+              <div class="page-line"></div>
+              <div class="page-footer"></div>
+            </div>
+            <div class="page-label">Capítulo 3 – Proceso de diseño</div>
+          </div>
+          <div class="page-preview">
+            <div class="page-inner">
+              <div class="page-header"></div>
+              <div class="page-line"></div>
+              <div class="page-line"></div>
+              <div class="page-line"></div>
+              <div class="page-line short"></div>
+              <div class="page-footer"></div>
+            </div>
+            <div class="page-label">Caso práctico – Vivienda de 3 pisos</div>
+          </div>
+          <div class="page-preview">
+            <div class="page-inner">
+              <div class="page-header"></div>
+              <div class="page-line"></div>
+              <div class="page-line short"></div>
+              <div class="page-line"></div>
+              <div class="page-line"></div>
+              <div class="page-footer"></div>
+            </div>
+            <div class="page-label">Checklists y tabla síntomas vs causas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="section" id="beneficios">
+    <div class="section-inner">
+      <div class="section-kicker">beneficios concretos</div>
+      <h2 class="section-title">Lo que ganas al aplicar este método.</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Decisiones más seguras</h3>
+          <p class="muted">
+            Diseñas zapatas con criterios claros y verificaciones mínimas, reduciendo el riesgo de fallas por capacidad o asentamientos.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ahorro de tiempo</h3>
+          <p class="muted">
+            Sigues un flujo ordenado, sin perderte entre apuntes, normas y videos. Tienes todo lo esencial en un solo documento.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Mejor comunicación con obra</h3>
+          <p class="muted">
+            Sabes qué pedir, qué revisar y cómo explicarlo al maestro, al residente o al cliente, sin hablar en abstracto.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Más confianza profesional</h3>
+          <p class="muted">
+            Dejas de sentir que “estás adivinando” y empiezas a respaldar tus decisiones con lógica y proceso.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Base sólida para seguir creciendo</h3>
+          <p class="muted">
+            Lo que aprendes aquí se conecta directo con cursos más avanzados de estructuras y geotecnia.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Aplicable en distintos contextos</h3>
+          <p class="muted">
+            Viviendas, pequeñas edificaciones, almacenes, ampliaciones… donde haya zapatas, este método te sirve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN ES -->
+  <section class="section" id="para-quien">
+    <div class="section-inner">
+      <div class="section-kicker">¿para quién es este ebook?</div>
+      <h2 class="section-title">Si encajas en esta lista, estás en el lugar correcto.</h2>
+      <p class="section-sub">
+        El objetivo es que cualquier persona relacionada con diseño o ejecución de cimentaciones superficiales pueda aplicar
+        el contenido sin necesidad de un posgrado en geotecnia.
+      </p>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <h3>✔ Perfíl académico y junior</h3>
+          <ul>
+            <li>Estudiantes de Ingeniería Civil de medios y últimos ciclos.</li>
+            <li>Egresados que empiezan a diseñar sus primeras cimentaciones reales.</li>
+            <li>Ingenieros estructurales junior que quieren reforzar el criterio geotécnico básico.</li>
+          </ul>
+        </div>
+        <div class="audience-card">
+          <h3>✔ Perfil de campo</h3>
+          <ul>
+            <li>Residentes y asistentes de obra que supervisan excavaciones y vaciados.</li>
+            <li>Maestros y técnicos que quieren entender mejor lo que piden los planos.</li>
+            <li>Profesionales que ya diseñan zapatas pero no se sienten 100% seguros de su proceso.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SO CHEAP -->
+  <section class="section" id="por-que-barato">
+    <div class="section-inner">
+      <div class="section-kicker">¿por qué cuesta tan poco?</div>
+      <h2 class="section-title">No es un curso premium de US$ 200. Es una herramienta accesible para el día a día.</h2>
+      <div class="cheap-card">
+        <p>
+          Este ebook no pretende competir con programas largos ni diplomados costosos. Está pensado como un
+          <span class="highlight">manual de bolsillo</span> al que puedas acceder sin romper tu presupuesto de estudiante,
+          técnico o residente de obra.
+        </p>
+        <p style="margin-top:.7rem;">
+          En lugar de cobrar cientos de dólares, la idea es que:
+        </p>
+        <ul class="bullets" style="margin-top:.4rem;">
+          <li>Puedas aplicarlo desde tu siguiente proyecto, aunque recién estés empezando.</li>
+          <li>Sea razonable incluirlo como gasto personal de formación continua.</li>
+          <li>Más personas diseñen y construyan zapatas con criterio, reduciendo errores en obra.</li>
+        </ul>
+        <p style="margin-top:.7rem;">
+          Por eso el precio de lanzamiento se mantiene en <span class="highlight">US$ 19.90</span>.
+          Lo suficientemente bajo para que no lo pienses demasiado; lo suficientemente alto para que te comprometas a aplicarlo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOR -->
+  <section class="section" id="autor">
+    <div class="section-inner">
+      <div class="two-col">
+        <div>
+          <div class="section-kicker">sobre el autor</div>
+          <h2 class="section-title">Escrito desde el cálculo y desde la obra, no solo desde el escritorio.</h2>
+          <p class="section-sub">
+            El contenido fue desarrollado por un ingeniero civil con experiencia en diseño estructural y supervisión
+            de proyectos de edificación, acostumbrado a traducir la norma en instrucciones claras para la obra.
+          </p>
+          <p class="muted">
+            A lo largo de distintos proyectos se repiten los mismos patrones: falta de información del suelo, zapatas
+            diseñadas sin revisar presiones, cambios en campo sin recalcular y ausencia de checklists. Este ebook
+            condensa las lecciones, advertencias y buenas prácticas que han demostrado funcionar en la realidad.
+          </p>
+        </div>
+        <div>
+          <div class="card card-alt">
+            <h3>Objetivo del material</h3>
+            <p class="muted">
+              Que puedas tomar mejores decisiones en diseño y obra, incluso si recién estás empezando, evitando
+              los errores que otros aprendieron a la mala. Que se convierta en ese documento que abres cada vez
+              que aparece una zapata en tus planos o en tu obra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section" id="testimonios">
+    <div class="section-inner">
+      <div class="section-kicker">lo que dicen quienes lo han aplicado</div>
+      <h2 class="section-title">Testimonios de lectores.</h2>
+      <p class="section-sub">
+        Ejemplos reales de cómo un enfoque práctico cambia la forma de diseñar y supervisar cimentaciones.
+      </p>
+
+      <div class="grid-3">
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">Carlos M.</div>
+              <div class="muted-small">Estudiante de Ing. Civil – 9.º ciclo</div>
+            </div>
+          </div>
+          <p>
+            Antes de este material diseñaba zapatas copiando ejemplos de clase. Ahora sigo el flujo del ebook y reviso
+            presiones, corte y punzonamiento. Me siento mucho más seguro cuando entrego mis cálculos.
+          </p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">Ingrid R.</div>
+              <div class="muted-small">Residente de obra</div>
+            </div>
+          </div>
+          <p>
+            Lo uso como checklist en obra. Cada vez que vaciamos zapatas reviso los puntos del capítulo de ejecución y
+            he evitado varios errores típicos de recubrimientos y curado. Me ahorra discusiones con el contratista.
+          </p>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="avatar"></div>
+            <div>
+              <div class="testimonial-name">Javier S.</div>
+              <div class="muted-small">Ingeniero estructural junior</div>
+            </div>
+          </div>
+          <p>
+            Me gustó que no se queda en la teoría. Los casos prácticos y la tabla de síntomas vs causas me ayudaron a
+            entender mejor problemas de fisuras que ya tenía en proyectos antiguos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONOS -->
+  <section class="section" id="bonos">
+    <div class="section-inner">
+      <div class="section-kicker">bonos extra incluidos</div>
+      <h2 class="section-title">Recursos adicionales para pasar de la lectura a la acción.</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Bono 1: Checklist imprimible de diseño</h3>
+          <p class="muted">
+            Lista paso a paso para completar con los datos de cada proyecto y asegurarte de no olvidar ninguna
+            verificación clave antes de cerrar tus planos de cimentación.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Bono 2: Checklist de supervisión de zapatas</h3>
+          <p class="muted">
+            Plantilla para usar en obra con ítems de excavación, armado, concreto y curado. Ideal para residentes,
+            asistentes y supervisores.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Bono 3: Tabla de “síntomas vs causas”</h3>
+          <p class="muted">
+            Guía rápida para relacionar fisuras, asentamientos y deformaciones con posibles problemas en la cimentación
+            y el suelo, y así orientar mejor tus diagnósticos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-inner">
+      <div class="section-kicker">preguntas frecuentes</div>
+      <h2 class="section-title">Resolvamos las dudas antes de que compres.</h2>
+      <p class="section-sub">
+        Si todavía estás pensando si este material es para ti, aquí tienes respuestas claras a lo que la mayoría pregunta.
+      </p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">¿Puedo usar el ebook si vivo en otro país?</div>
+          <div class="faq-a">
+            Sí. Los principios de diseño y las buenas prácticas de cimentación son aplicables en cualquier país.
+            Solo debes adaptar normas y factores de seguridad a la reglamentación local.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Necesito mucha experiencia para aprovecharlo?</div>
+          <div class="faq-a">
+            No. Está pensado para estudiantes de últimos ciclos, egresados y profesionales junior.
+            Se parte de lo básico, pero se llega a un nivel de aplicación real en proyecto y obra.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿En qué formato se entrega y cómo accedo?</div>
+          <div class="faq-a">
+            El ebook se entrega en formato PDF descargable. Después del pago recibirás acceso inmediato desde Hotmart
+            y podrás leerlo en tu laptop, tablet o celular las veces que quieras.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">¿Habrá actualizaciones del contenido?</div>
+          <div class="faq-a">
+            Sí. Si se incorpora algún ajuste, tabla o ejemplo adicional, se actualizará el archivo y podrás acceder
+            a la versión más reciente sin pagar de nuevo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO FINAL + CTA -->
+  <section class="section" id="precio">
+    <div class="section-inner">
+      <div class="pricing">
+        <div class="pricing-tag">inversión</div>
+        <h2 class="pricing-main">
+          Todo el contenido del ebook y los bonos por un solo pago.
+          <span class="price-number">US$ 19.90</span>
+        </h2>
+        <p class="section-sub" style="margin:0 auto;">
+          El conocimiento que aplicas aquí puede ahorrarte errores que cuestan mucho más que el valor del ebook.
+          Es una inversión pequeña comparada con el impacto que puede tener en tu seguridad profesional y en la calidad de tus proyectos.
+        </p>
+
+        <div style="margin-top:1.6rem;">
+          <a href="https://pay.hotmart.com/V102947357Q" target="_blank" rel="noopener" class="btn-primary">
+            Quiero el ebook y los bonos por US$ 19.90
+          </a>
+        </div>
+
+        <div class="secure-badges">
+          <span>🔒 Pagos 100% seguros vía Hotmart</span>
+          <span>📥 Descarga inmediata en PDF</span>
+          <span>♻ Actualizaciones futuras incluidas</span>
+        </div>
+
+        <div class="guarantee">
+          Si aplicas lo que se explica aquí, tendrás una base mucho más sólida para diseñar y supervisar cimentaciones.
+          Aprovecha el precio de lanzamiento: una vez finalizada la promoción, el valor del ebook aumentará.
+        </div>
+
+        <div class="urgency">
+          Cada proyecto que haces sin un método claro es una ruleta. Toma la decisión hoy, antes de que el precio de lanzamiento termine.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © <span id="year"></span> Zapatas de Concreto Armado. Todos los derechos reservados.
+</footer>
+
+<script>
+  // Año automático en el footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
